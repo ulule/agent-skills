@@ -9,9 +9,15 @@ Ulule is:
    current fields for starting one.
 4. It updates the proposal until `missing_fields` is empty. A complete proposal
    moves to `waiting_validation` automatically; there is no separate submit step.
-5. Ulule processes the proposal in the background. The assistant checks again
-   until a `project_id` is returned. This is often quick but must not be assumed.
-   The proposal may also be refused.
+   This review does not block preparation of the unpublished draft: review and
+   draft completion proceed in parallel.
+5. The associated project is created asynchronously after the proposal is
+   complete. Refresh or poll until the proposal response includes `project_id`.
+   Waiting for `project_id` is a technical synchronization step, not a wait for
+   human acceptance. As soon as the identifier is available, the assistant can
+   continue completing the unpublished draft while Ulule's review remains in
+   progress. If the live response later reports a refusal or another blocking
+   state, explain it accurately and stop further writes.
 6. Once `project_id` exists, project-scoped tools can complete the unpublished
    draft: page fields, funding goal, rewards, images and draft news.
 7. The user retrieves the project through their Ulule account or email journey,

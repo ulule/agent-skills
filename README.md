@@ -48,7 +48,10 @@ access token into a conversation.
 
 The skill prepares proposals and unpublished drafts. It does not publish a
 campaign automatically, guarantee approval or success, or replace Ulule's
-moderation process.
+moderation process. Ulule reviews the proposal while the user and their
+assistant complete the draft: human approval of the proposal is not a
+prerequisite for preparing the unpublished draft. The technical availability of
+`project_id` may be asynchronous.
 
 Always keep these stages separate:
 

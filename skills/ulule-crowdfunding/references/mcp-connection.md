@@ -40,8 +40,19 @@ not pass a user id or email unless the live schema explicitly requests it.
 Before creating, list the user's proposals and reuse an open one where
 appropriate. After creation, complete the proposal with the fields reported in
 `missing_fields`. When complete, it moves to validation without a separate
-submit action. Poll the proposal list until `project_id` is present before using
-project-scoped tools. A proposal can be refused, so never guarantee acceptance.
+submit action. Ulule's review and the preparation of the associated unpublished
+draft are parallel stages; human approval of the proposal is not required before
+draft work begins. A proposal can be refused, so never guarantee acceptance.
+
+Ulule creates the project asynchronously after the proposal is complete. Refresh
+or poll the proposal until the response includes `project_id`.
+
+This is a technical wait for the identifier, not a wait for human approval.
+Ulule may still be reviewing the proposal while the user and assistant complete
+the unpublished draft. If the proposal remains in a non-terminal processing
+state, explain that the project is still being prepared and retry later. If the
+live response reports a refusal or another blocking state, report it accurately
+and stop further writes.
 
 ## Writes and confirmation
 

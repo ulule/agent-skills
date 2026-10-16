@@ -36,6 +36,9 @@ never published automatically.
 - Do not call a proposal a project until the tool returns a `project_id`.
 - Do not call an unpublished project a live campaign.
 - Do not promise that Ulule will accept a proposal.
+- Ulule's review of the proposal runs in parallel with preparation of the
+  unpublished draft; do not present human approval as a prerequisite for draft
+  work.
 - Do not promise a processing or moderation deadline.
 - Do not imply that a draft news item was sent.
 - Do not promise automatic MCP discovery, installation or connection.

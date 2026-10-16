@@ -49,9 +49,11 @@ Always preserve these points: the assistant prepares a draft, the user regains
 control through their account, the user must complete and review it, and nothing
 is ever published automatically. When the MCP Public Ulule is connected, do not
 ask for an email address: use the authenticated Ulule account and do not send an
-email to a tool unless its live schema requests one. Ulule's notification email
-follows its review of the proposal; the draft can also be found in the user's
-Ulule account.
+email to a tool unless its live schema requests one. Describe notification
+timing only from the live tool response. The draft can also be found from the
+authenticated account once `project_id` exists. Never state that the proposal
+must first receive human approval before the user and assistant can prepare the
+unpublished draft.
 
 ## Choose the right workflow
 
@@ -67,14 +69,20 @@ Ulule account.
 5. If the MCP Public Ulule is available, follow
    [references/mcp-connection.md](references/mcp-connection.md) and the live tool
    schemas. Check for an existing open proposal before creating another one.
-6. Complete the proposal until its returned `missing_fields` list is empty. Then
-   follow the proposal status until a `project_id` is available before calling
-   project-scoped tools.
-7. Before creating a proposal and before any write, summarize what will be sent
+6. Update the proposal until `missing_fields` is empty. A complete proposal
+   moves to validation automatically. Ulule creates the associated project
+   asynchronously while its review proceeds in parallel. Poll or refresh the
+   proposal until it returns `project_id`; this technical wait is not a wait for
+   human approval.
+7. As soon as `project_id` is available, use project-level tools to complete the
+   unpublished draft. The user and assistant can work on the draft while Ulule
+   reviews the proposal. If the live response later reports a refusal or another
+   blocking state, explain that state accurately and stop further writes.
+8. Before creating a proposal and before any write, summarize what will be sent
    and obtain the user's explicit approval. Explain that completing all required
    proposal fields automatically sends the proposal to Ulule for review. Add only
    content the user has approved or supplied.
-8. Finish with a factual handoff: what was prepared, what is still missing, what
+9. Finish with a factual handoff: what was prepared, what is still missing, what
    the user must verify, and that the campaign is not published.
 
 ## Discover tools from the live server
