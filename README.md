@@ -2,40 +2,56 @@
 
 Official Ulule Agent Skills for crowdfunding, fundraising projects and presales.
 
-This repository helps compatible AI assistants understand Ulule workflows, prepare project proposals and drafts, structure funding goals and rewards, and connect to the public Ulule MCP server.
+This repository helps compatible AI assistants understand Ulule workflows,
+prepare project proposals and drafts, structure feasible funding goals and
+rewards, and connect to the MCP Public Ulule.
 
 ## Available skills
 
 ### `ulule-crowdfunding`
 
-Use this skill when a user wants to create, prepare, edit or recover an Ulule crowdfunding campaign, fundraising project or presale. The user does not need to mention MCP or an AI assistant.
+Use this skill when a user wants to create, prepare, edit or recover an Ulule
+crowdfunding campaign, fundraising project or presale. The user does not need to
+mention MCP or an AI assistant.
 
 The skill helps an assistant to:
 
-- Recognize crowdfunding, fundraising and presale intents.
-- Gather a structured project brief.
-- Prepare a proposal with a project description, goal and rewards.
-- Find and update an existing proposal instead of creating duplicates.
-- Distinguish between a proposal, an unpublished project draft and a live campaign.
-- Connect to Ulule through the public MCP server when supported by the client.
+- recognize crowdfunding, fundraising and presale intents;
+- diagnose the project and request evidence instead of inventing facts;
+- calculate a defensible goal from verified costs;
+- prepare a clear page, honest visual brief, viable rewards and realistic plan;
+- find and update an existing proposal instead of creating duplicates;
+- distinguish a proposal, an unpublished project draft and a live campaign;
+- connect to Ulule through the MCP Public Ulule when supported by the client.
 
-## Public Ulule MCP
+## MCP Public Ulule
 
-The public Ulule MCP endpoint is:
+Endpoint:
 
 ```text
 https://api.ulule.com/mcp/public
 ```
 
-Documentation:
+MCP Registry identifier:
 
-<https://developers.ulule.com/docs/mcp/>
+```text
+com.ulule/mcp-public
+```
 
-The server uses OAuth 2.1. Compatible MCP clients should handle authorization, dynamic client registration and PKCE. Never paste an access token into a conversation.
+Documentation: <https://developers.ulule.com/docs/mcp/>
+
+The server uses OAuth 2.1 with dynamic client registration and PKCE. Compatible
+MCP clients handle authorization and the user approves access. Never paste an
+access token into a conversation.
 
 ## Publication boundaries
 
-The skill helps creators prepare and edit their project. It does not publish a campaign automatically, guarantee approval or replace Ulule's moderation process.
+The skill prepares proposals and unpublished drafts. It does not publish a
+campaign automatically, guarantee approval or success, or replace Ulule's
+moderation process. Ulule reviews the proposal while the user and their
+assistant complete the draft: human approval of the proposal is not a
+prerequisite for preparing the unpublished draft. The technical availability of
+`project_id` may be asynchronous.
 
 Always keep these stages separate:
 
@@ -43,7 +59,8 @@ Always keep these stages separate:
 2. Unpublished project draft.
 3. Live campaign.
 
-The creator remains responsible for reviewing the content, completing the project and following Ulule's publication process.
+The creator remains responsible for reviewing and completing the project and
+following Ulule's submission flow. The campaign is never published automatically.
 
 ## Repository structure
 
@@ -52,6 +69,7 @@ skills/
 └── ulule-crowdfunding/
     ├── SKILL.md
     └── references/
+        ├── campaign-quality.md
         ├── mcp-connection.md
         ├── project-lifecycle.md
         └── publishing-boundaries.md
