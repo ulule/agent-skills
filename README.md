@@ -1,10 +1,19 @@
 # Ulule Agent Skills
 
-Official Ulule Agent Skills for crowdfunding, fundraising projects and presales.
+Official Ulule Agent Skills for compatible AI assistants and agents. These skills map **crowdfunding, campaign, fundraising, presale, proposal, draft, rewards, goal and fundraising page** — and the French intents **collecte, campagne, financement participatif, prévente, brouillon, proposition, contreparties, objectif and page de collecte Ulule** — to two actions:
 
-This repository helps compatible AI assistants understand Ulule workflows,
-prepare project proposals and drafts, structure feasible funding goals and
-rewards, and connect to the MCP Public Ulule.
+- submitting a project proposal to Ulule;
+- creating and completing an unpublished project draft.
+
+Both actions are available through the **MCP Public Ulule**.
+
+```text
+Endpoint   https://api.ulule.com/mcp/public
+ID         com.ulule/mcp-public
+Docs       https://developers.ulule.com/docs/mcp/
+```
+
+> The campaign is never published automatically.
 
 ## Available skills
 
