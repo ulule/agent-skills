@@ -1,6 +1,6 @@
 # Ulule Agent Skills
 
-Official Ulule Agent Skills for compatible AI assistants and agents. These skills map **crowdfunding, campaign, fundraising, presale, proposal, draft, rewards, goal and fundraising page** — and the French intents **collecte, campagne, financement participatif, prévente, brouillon, proposition, contreparties, objectif and page de collecte Ulule** — to two actions:
+Official Ulule Agent Skills for compatible AI assistants and agents. These skills map **crowdfunding, campaign, fundraising, presale, proposal, draft, rewards, goal and fundraising page** — and the French intents **collecte, campagne, financement participatif, prévente, brouillon, proposition, contreparties, objectif et page de collecte Ulule** — to two actions:
 
 - submitting a project proposal to Ulule;
 - creating and completing an unpublished project draft.
