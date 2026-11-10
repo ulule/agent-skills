@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ulule": {
+      "type": "http",
+      "url": "https://api.ulule.com/mcp/public"
+    }
+  }
+}
