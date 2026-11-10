@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "ulule-agent-skills",
+  "owner": { "name": "Ulule", "email": "support@ulule.com" },
+  "metadata": {
+    "description": "Official Ulule plugins and agent skills for crowdfunding workflows.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ulule-crowdfunding",
+      "source": "./",
+      "description": "Use the MCP Public Ulule to submit a proposal and prepare an unpublished crowdfunding draft for the user. Nothing is published automatically.",
+      "version": "0.1.0",
+      "author": { "name": "Ulule" },
+      "homepage": "https://developers.ulule.com/docs/mcp/",
+      "repository": "https://github.com/ulule/agent-skills",
+      "license": "Apache-2.0",
+      "keywords": ["ulule", "crowdfunding", "fundraising", "presale", "mcp"],
+      "category": "productivity"
+    }
+  ]
+}

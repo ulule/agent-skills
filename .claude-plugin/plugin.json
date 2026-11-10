@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "ulule-crowdfunding",
+  "version": "0.1.0",
+  "description": "Connects Claude to the MCP Public Ulule so it can submit a crowdfunding proposal for its user, prepare the resulting unpublished draft, and add the project's goal, images and rewards. Nothing is published automatically.",
+  "author": { "name": "Ulule", "url": "https://www.ulule.com/" },
+  "homepage": "https://developers.ulule.com/docs/mcp/",
+  "repository": "https://github.com/ulule/agent-skills",
+  "license": "Apache-2.0",
+  "keywords": ["ulule", "crowdfunding", "fundraising", "presale", "campaign", "mcp"]
+}

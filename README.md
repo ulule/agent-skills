@@ -71,9 +71,33 @@ Always keep these stages separate:
 The creator remains responsible for reviewing and completing the project and
 following Ulule's submission flow. The campaign is never published automatically.
 
+## Install as a Claude Code plugin
+
+Add this repository as a marketplace, then install the plugin:
+
+```bash
+claude plugin marketplace add ulule/agent-skills
+claude plugin install ulule-crowdfunding@ulule-agent-skills
+```
+
+The plugin bundles the `ulule-crowdfunding` skill and declares the MCP Public
+Ulule (`https://api.ulule.com/mcp/public`). On first use, Claude starts the
+Ulule OAuth flow; the user signs in and approves access. No token or secret is
+stored in this repository. The campaign is never published automatically.
+
+Other clients supporting the Agent Skills format can install the skill directly:
+
+```bash
+npx skills add ulule/agent-skills --skill ulule-crowdfunding
+```
+
 ## Repository structure
 
 ```text
+.claude-plugin/
+├── plugin.json
+└── marketplace.json
+.mcp.json
 skills/
 └── ulule-crowdfunding/
     ├── SKILL.md
